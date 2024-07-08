@@ -15,7 +15,7 @@ import Link from "next/link";
 import socket from "@/socket/socket.js";
 
 const CodeEditor = () => {
-  const snippet = `#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n\tcout << "Hello, World!"<<endl;\n\treturn 0;\n}`;
+  const snippet = `#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n\tcout << "Hello, Bibek!"<<endl;\n\treturn 0;\n}`;
 
   const [code, setCode] = useState(snippet);
   const [theme, setTheme] = useState("blackboard");
