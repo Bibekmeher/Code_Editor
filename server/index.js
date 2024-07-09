@@ -1,5 +1,5 @@
 const express = require("express");
-const { createServer } = require("http"); // Changed from 'node:http'
+const { createServer } = require("http");
 const { Server } = require("socket.io");
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -20,14 +20,17 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, { 
   cors: { 
-    origin: '*' 
+    origin: 'https://code-editor-five-xi.vercel.app' 
   } 
 });
 
 const PORT = process.env.PORT || 9000;
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://code-editor-five-xi.vercel.app',
+  methods: ['GET', 'POST'],
+}));
 
 ptyProcess.onData((data) => {
   console.log(data);
